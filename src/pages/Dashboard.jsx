@@ -5,20 +5,26 @@ function Dashboard() {
   useEffect(() => {
     console.log('تم تحميل لوحة التحكم');
   }, []);
-  const lineChartOptions = {
-    chart: {
-      toolbar: { show: false },
+
+const lineChartOptions = {
+  chart: {
+    toolbar: {
+      show: false,
     },
-    xaxis: {
-      categories: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو'],
-    },
-    stroke: {
-      curve: 'smooth',
-    },
-    dataLabels: {
+    zoom: {
       enabled: false,
     },
-  };
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    curve: 'straight',
+  },
+  xaxis: {
+    categories: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو'],
+  },
+};
 
   const lineChartSeries = [
   {
@@ -27,23 +33,26 @@ function Dashboard() {
   },
 ];
 
-  const barChartOptions = {
-    chart: {
-      toolbar: { show: false },
+const barChartOptions = {
+  chart: {
+    toolbar: {
+      show: false,
     },
-    xaxis: {
-      categories: ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس'],
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 4,
+      borderRadiusApplication: 'end',
+      horizontal: true,
     },
-    plotOptions: {
-      bar: {
-        borderRadius: 4,
-        columnWidth: '45%',
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-  };
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  xaxis: {
+    categories: ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس'],
+  },
+};
 
   const barChartSeries = [
   {
