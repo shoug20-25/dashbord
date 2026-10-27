@@ -1,3 +1,4 @@
+import styles from './Home.module.css';
 function Home() {
   const tickets = [
     {
@@ -21,30 +22,32 @@ function Home() {
   ];
 
   return (
-    <main className="home-page">
-      <section className="home-welcome">
+    <main className={styles["home-page"]}>
+      <section className={styles["home-welcome"]}>
         <h1>مرحبًا بك شوق 👋</h1>
       </section>
 
-      <section className="subscription-card">
+      <section className={styles["subscription-card"]}>
         <div>
           <h2>اشتراكي: نظام ماتريكس</h2>
           <p>ينتهي خلال: 2026-12-12</p>
         </div>
-        <span className="subscription-status">ساري</span>
+        <span className={styles["subscription-status"]} >ساري</span>
       </section>
 
-      <section className="ticket-summary">
-        <article className="ticket-summary-card">
-          <span className="ticket-icon open-icon">▤</span>
+      <section className={styles["ticket-summary"]}>
+        <article className={styles["ticket-summary-card"]}>
+          <span className={styles["ticket-icon"] + ' ' + styles["open-icon"]}>▤</span>
           <div>
             <h3>تذاكر مفتوحة</h3>
             <p>1</p>
           </div>
         </article>
 
-        <article className="ticket-summary-card">
-          <span className="ticket-icon closed-icon">▣</span>
+        <article className={styles['ticket-summary-card']}>
+          <span className={`${styles['ticket-icon']} ${styles['closed-icon']}`}>
+             ▣
+          </span>
           <div>
             <h3>تذاكر مغلقة</h3>
             <p>2</p>
@@ -52,17 +55,17 @@ function Home() {
         </article>
       </section>
 
-      <section className="latest-tickets">
-        <div className="latest-tickets-header">
+      <section className={styles["latest-tickets"]}>
+        <div className={styles["latest-tickets-header"]}>
           <h2>آخر التحديثات</h2>
-          <button type="button" className="view-tickets-button">
+          <button type="button" className={styles["view-tickets-button"]}>
             عرض جميع التذاكر
           </button>
         </div>
 
         {tickets.map((ticket) => (
-          <article className="latest-ticket" key={ticket.id}>
-            <div className="ticket-details">
+          <article className={styles["latest-ticket"]} key={ticket.id}>
+            <div className={styles["ticket-details"]}>
               <h3>
                 {ticket.title} <span>#{ticket.id}</span>
               </h3>
@@ -70,14 +73,16 @@ function Home() {
             </div>
 
             <span
-              className={`ticket-status ${
-                ticket.status === 'قيد المعالجة' ? 'processing' : 'resolved'
-              }`}
+              className={`${styles['ticket-status']} ${
+                    ticket.status === 'قيد المعالجة'
+                   ? styles.processing
+                   : styles.resolved
+                     }`}
             >
               {ticket.status}
             </span>
 
-            <span className="ticket-time">{ticket.time}</span>
+            <span className={styles['ticket-time']}>{ticket.time}</span>
           </article>
         ))}
       </section>

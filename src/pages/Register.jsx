@@ -1,3 +1,4 @@
+import styles from './Register.module.css';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
@@ -33,11 +34,11 @@ function Register() {
   }
 
   return (
-  <main className="auth-card">
+  <main className={styles['auth-card']}>
     <img
       src="/logo.png"
       alt="شعار الدعم الفني"
-      className="auth-logo"
+      className={styles['auth-logo']}
     />
 
     <h1>إنشاء حساب</h1>
@@ -81,7 +82,7 @@ function Register() {
           onChange={(event) => setConfirmPassword(event.target.value)}
         />
 
-        {error && <p className="input-error">{error}</p>}
+       {error && <p className={styles['input-error']}>{error}</p>}
 
         <Button type="submit" loading={loading}>
           إنشاء حساب

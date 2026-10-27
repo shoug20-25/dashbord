@@ -1,3 +1,4 @@
+import styles from './Input.module.css';
 function Input({
   label,
   type = 'text',
@@ -20,7 +21,7 @@ function Input({
         onChange={onChange}
       />
 
-      {error && <p className="input-error">{error}</p>}
+      {error && <p className={styles['input-error']}>{error}</p>}
     </div>
   );
 }

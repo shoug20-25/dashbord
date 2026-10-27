@@ -1,0 +1,27 @@
+.btn {
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+

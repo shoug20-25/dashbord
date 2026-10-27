@@ -1,3 +1,4 @@
+import styles from './Dashboard.module.css';
 import { useEffect } from 'react';
 import Chart from 'react-apexcharts';
 
@@ -66,25 +67,25 @@ const barChartOptions = {
       <h1>لوحة التحكم</h1>
       <p>مرحبًا بك في لوحة التحكم الخاصة بك!</p>
 
-      <section className="stats-container">
-        <div className="stat-card">
+      <section className={styles['stats-container']}>
+        <div className={styles['stat-card']}>
          <h3>إجمالي التذاكر</h3>
           <p>320</p>
         </div>
 
-        <div className="stat-card">
+        <div className={styles['stat-card']}>
            <h3>التذاكر المفتوحة</h3>
             <p>85</p>
           </div>
 
-            <div className="stat-card">
+            <div className={styles['stat-card']}>
              <h3>التذاكر المغلقة</h3>
               <p>235</p>
              </div>
       </section>
 
-      <section className="charts-container">
-        <div className="chart-card">
+      <section className={styles['charts-container']}>
+        <div className={styles['chart-card']}>
           <h2>التذاكر خلال الأشهر</h2>
           <Chart
             options={lineChartOptions}
@@ -94,7 +95,7 @@ const barChartOptions = {
           />
         </div>
 
-        <div className="chart-card">
+        <div className={styles['chart-card']}>
           <h2>التذاكر خلال الأسبوع</h2>
           <Chart
             options={barChartOptions}

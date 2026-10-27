@@ -1,3 +1,4 @@
+import styles from './Login.module.css';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
@@ -29,11 +30,11 @@ function Login() {
   }
 
   return (
-    <main className="auth-card">
+    <main className={styles['auth-card']}>
     <img
       src="/logo.png"
       alt="شعار الدعم الفني"
-      className="auth-logo"
+      className={styles['auth-logo']}
     />
       <h1>تسجيل الدخول</h1>
       <p>مرحبًا بك في لوحة التحكم</p>
@@ -57,7 +58,7 @@ function Login() {
           onChange={(event) => setPassword(event.target.value)}
         />
 
-        {error && <p className="input-error">{error}</p>}
+        {error && <p className={styles['input-error']}>{error}</p>}
 
         <Button type="submit" loading={loading}>
           تسجيل الدخول
